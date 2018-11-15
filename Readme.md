@@ -1,3 +1,9 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [Form1.cs](./CS/E989/Form1.cs) (VB: [Form1.vb](./VB/E989/Form1.vb))
+* [GridViewGroupToolTipController.cs](./CS/E989/GridViewGroupToolTipController.cs) (VB: [GridViewGroupToolTipController.vb](./VB/E989/GridViewGroupToolTipController.vb))
+<!-- default file list end -->
 # Showing tooltips for group rows in the grid
 
 
