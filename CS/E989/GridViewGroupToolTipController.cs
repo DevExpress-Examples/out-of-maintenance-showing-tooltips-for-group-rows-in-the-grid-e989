@@ -15,14 +15,14 @@ namespace DevExpress.XtraGrid.Views.ToolTip {
     public delegate void GridViewGroupToolTipControllerShowControlInfo(object value, out string text, out string title);
 
     public class GridViewGroupToolTipController {
-        GridView view;
+        GridView _gridView;
         Dictionary<GridColumn, GridViewGroupToolTipControllerShowControlInfo> columns;
         ToolTipController tooltip;
 
         //Use Default Tooltip controller
-        public GridViewGroupToolTipController(GridView view) : this(view, null) { }
-        public GridViewGroupToolTipController(GridView view, ToolTipController tooltip) {
-            this.view = view;
+        public GridViewGroupToolTipController(GridView _gridView) : this(_gridView, null) { }
+        public GridViewGroupToolTipController(GridView _gridView, ToolTipController tooltip) {
+            this._gridView = _gridView;
             this.columns = new Dictionary<GridColumn, GridViewGroupToolTipControllerShowControlInfo>();
             this.tooltip = tooltip;
             View.MouseLeave += new EventHandler(OnView_MouseLeave);
@@ -54,7 +54,7 @@ namespace DevExpress.XtraGrid.Views.ToolTip {
         void OnView_MouseLeave(object sender, EventArgs e) {
             ToolTip.HideHint();
         }
-        public GridView View { get { return view; } }
+        public GridView View { get { return _gridView; } }
         protected Dictionary<GridColumn, GridViewGroupToolTipControllerShowControlInfo> Columns { get { return columns; } }
         protected ToolTipController ToolTip { get { return tooltip != null ? tooltip : ToolTipController.DefaultController; } }
     }
